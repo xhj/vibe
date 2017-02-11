@@ -65,16 +65,20 @@ class TSCStatsLoader {
                     let weekName = "Week \(then.weekOfYear)"
                     countsWeeks[weekName] = (countsWeeks[weekName] ?? 0) + 1
                     
-                    let monthName = "\(then.month)|\(dateFormatter2.string(from: date))"
+                    var monthVal = String(then.month!)
+                    if(monthVal.characters.count == 1){
+                        monthVal = "0\(monthVal)"
+                    }
+                    let monthName = "\(monthVal)|\(dateFormatter2.string(from: date))"
                     countsMonths[monthName] = (countsMonths[monthName] ?? 0) + 1
                 }
                 
                 if thenTime >= nowTime - 7 * 86400 {
-                    let dayName = "\(then.year)\(then.month)\(then.day)|\(then.day)-\(then.month)"
+                    let dayName = "\(floor(thenTime/86400))|\(then.day!)-\(then.month!)"
                     countsDays[dayName] = (countsDays[dayName] ?? 0) + 1
                 }
                 
-                let dayOfWeekName = "\(then.weekday)|\(weekdayNames[then.weekday!])"
+                let dayOfWeekName = "\(then.weekday!)|\(weekdayNames[then.weekday!])"
                 countsDayOfWeek[dayOfWeekName] = (countsDayOfWeek[dayOfWeekName] ?? 0) + 1
             }
             
