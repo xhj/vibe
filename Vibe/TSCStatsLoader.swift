@@ -74,7 +74,8 @@ class TSCStatsLoader {
                 }
                 
                 if thenTime >= nowTime - 7 * 86400 {
-                    let dayName = "\(floor(thenTime/86400))|\(then.day!)-\(then.month!)"
+                    let daySortValue = then.year!*1000 + then.month!*70 + then.day!
+                    let dayName = "\(daySortValue)|\(then.day!)-\(then.month!)"
                     countsDays[dayName] = (countsDays[dayName] ?? 0) + 1
                 }
                 
