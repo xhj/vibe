@@ -17,7 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.window.titlebarAppearsTransparent = true
         self.window.isMovableByWindowBackground = true
         self.window.styleMask.insert(.fullSizeContentView)
-        self.window.backgroundColor = NSColor.white
+        self.window.backgroundColor = NSColor(red:0.15, green:0.16, blue:0.18, alpha:1.00)
         
         self.window.makeKey()
         self.window.makeMain()
@@ -25,6 +25,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.updateStats()
         
         Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(AppDelegate.updateStats), userInfo: nil, repeats: true)
+    }
+    
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+        return true
     }
     
     func updateStats() {

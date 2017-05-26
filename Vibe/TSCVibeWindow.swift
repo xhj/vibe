@@ -29,7 +29,7 @@ class TSCVibeWindow: NSWindow {
     }
     
     internal func renderWeekGraph(_ stats: StatsDictionary) {
-        let chartView = TSCBarChartView(frame: CGRect(x: 0,y: 0,width: self.weekGraph.frame.width, height: self.weekGraph.frame.height), barData: stats["days"]!, barColor: NSColor(red:0.60, green:0.55, blue:0.85, alpha:1.00));
+        let chartView = TSCBarChartView(frame: CGRect(x: 0,y: 0,width: self.weekGraph.frame.width, height: self.weekGraph.frame.height), barData: stats["days"]!, barColor: NSColor(red:0.14, green:0.65, blue:0.94, alpha:1.00));
         chartView.autoresizingMask = [.viewHeightSizable, .viewWidthSizable];
         chartView.translatesAutoresizingMaskIntoConstraints = true;
         
@@ -37,7 +37,7 @@ class TSCVibeWindow: NSWindow {
     }
     
     internal func renderMonthGraph(_ stats: StatsDictionary) {
-        let chartView = TSCBarChartView(frame: CGRect(x: 0,y: 0,width: self.monthGraph.frame.width, height: self.monthGraph.frame.height), barData: stats["months"]!, barColor: NSColor(red:0.36, green:0.65, blue:0.90, alpha:1.00));
+        let chartView = TSCBarChartView(frame: CGRect(x: 0,y: 0,width: self.monthGraph.frame.width, height: self.monthGraph.frame.height), barData: stats["months"]!, barColor: NSColor(red:0.97, green:0.25, blue:0.44, alpha:1.00));
         chartView.autoresizingMask = [.viewHeightSizable, .viewWidthSizable];
         chartView.translatesAutoresizingMaskIntoConstraints = true;
         
@@ -45,7 +45,7 @@ class TSCVibeWindow: NSWindow {
     }
     
     internal func renderWeekdayGraph(_ stats: StatsDictionary) {
-        let chartView = TSCBarChartView(frame: CGRect(x: 0,y: 0,width: self.weekdayGraph.frame.width, height: self.weekdayGraph.frame.height), barData: stats["weekdays"]!, barColor: NSColor(red:0.21, green:0.26, blue:0.33, alpha:1.00));
+        let chartView = TSCBarChartView(frame: CGRect(x: 0,y: 0,width: self.weekdayGraph.frame.width, height: self.weekdayGraph.frame.height), barData: stats["weekdays"]!, barColor: NSColor(red:0.97, green:0.82, blue:0.20, alpha:1.00));
         chartView.autoresizingMask = [.viewHeightSizable, .viewWidthSizable];
         chartView.translatesAutoresizingMaskIntoConstraints = true;
         

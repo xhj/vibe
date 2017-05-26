@@ -32,6 +32,7 @@ class TSCBarChartView: NSView {
         
         self.barData = barData
         self.barColor = barColor
+
         self.renderBarData()
     }
     
@@ -72,10 +73,19 @@ class TSCBarChartView: NSView {
             }
             
             let calculatedHeight = barHeight * (CGFloat(value) / CGFloat(maxValue))
-            let calculatedFrame = CGRect(x: CGFloat(barOffset) * (barWidth + 4), y: barTop, width: barWidth, height: calculatedHeight)
-            var valueLabelFrame = CGRect(x: CGFloat(barOffset) * (barWidth + 4), y: barTop, width: barWidth, height: calculatedHeight - 2)
+            let calculatedFrame = CGRect(x: CGFloat(barOffset) * (barWidth + 4),
+                                         y: barTop,
+                                         width: barWidth,
+                                         height: calculatedHeight)
+            var valueLabelFrame = CGRect(x: CGFloat(barOffset) * (barWidth + 4),
+                                         y: barTop,
+                                         width: barWidth,
+                                         height: calculatedHeight - 2)
             if(calculatedHeight < 18){
-                valueLabelFrame = CGRect(x: CGFloat(barOffset) * (barWidth + 4), y: barTop, width: barWidth, height: calculatedHeight + 18) // Outside bar
+                valueLabelFrame = CGRect(x: CGFloat(barOffset) * (barWidth + 4),
+                                         y: barTop,
+                                         width: barWidth,
+                                         height: calculatedHeight + 18) // Outside bar
             }
             
             let valueLabel = NSTextField(frame: valueLabelFrame)
@@ -87,7 +97,11 @@ class TSCBarChartView: NSView {
             valueLabel.alignment = .center
             valueLabel.font = NSFont.systemFont(ofSize: 10)
             
-            let labelLabel = NSTextField(frame: CGRect(x: CGFloat(barOffset) * (barWidth + 4) - 3, y: 0, width: barWidth + 6, height: barTop - 3))
+            let labelLabel = NSTextField(frame: CGRect(x: CGFloat(barOffset) * (barWidth + 4) - 3,
+                                                       y: 0,
+                                                       width: barWidth + 6,
+                                                       height: barTop - 3))
+            
             labelLabel.stringValue = String(label)
             labelLabel.isBordered = false
             labelLabel.backgroundColor = NSColor(white: 1, alpha: 0)
@@ -95,6 +109,7 @@ class TSCBarChartView: NSView {
             labelLabel.alignment = .center
             labelLabel.usesSingleLineMode = true
             labelLabel.isEditable = false
+            
             if #available(OSX 10.11, *) {
                 labelLabel.font = NSFont.systemFont(ofSize: 11, weight: NSFontWeightSemibold)
             } else {

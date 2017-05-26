@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -668,96 +667,72 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="OmniFocus Report" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g" customClass="TSCVibeWindow" customModule="Vibe" customModuleProvider="target">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-            <rect key="contentRect" x="335" y="390" width="913" height="384"/>
+        <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g" customClass="TSCVibeWindow" customModule="Vibe" customModuleProvider="target">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+            <rect key="contentRect" x="335" y="390" width="408" height="637"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="913" height="384"/>
+                <rect key="frame" x="0.0" y="0.0" width="408" height="637"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2rZ-AC-dJT">
-                        <rect key="frame" x="43" y="308" width="124" height="31"/>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2rZ-AC-dJT">
+                        <rect key="frame" x="42" y="558" width="324" height="27"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Loading..." usesSingleLineMode="YES" id="2kD-Vd-XC8">
-                            <font key="font" size="26" name=".AppleSystemUIFontDemi"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <font key="font" size="20" name=".AppleSystemUIFontDemi"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yny-Hk-iJv">
-                        <rect key="frame" x="43" y="283" width="68" height="18"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Loading..." id="1Tg-XI-IcJ">
-                            <font key="font" size="14" name=".AppleSystemUIFont"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yny-Hk-iJv">
+                        <rect key="frame" x="43" y="540" width="323" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="                        " id="1Tg-XI-IcJ">
+                            <font key="font" size="13" name=".AppleSystemUIFont"/>
+                            <color key="textColor" white="0.93000000000000005" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1Rz-tb-MgD">
-                        <rect key="frame" x="38" y="199" width="186" height="18"/>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Rz-tb-MgD">
+                        <rect key="frame" x="44" y="469" width="322" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Completed tasks last 7 days" id="IEN-yy-XhY">
-                            <font key="font" size="14" name=".AppleSystemUIFont"/>
+                            <font key="font" size="13" name=".AppleSystemUIFont"/>
                             <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ELO-0f-zdq">
-                        <rect key="frame" x="324" y="199" width="184" height="18"/>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ELO-0f-zdq">
+                        <rect key="frame" x="44" y="312" width="322" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Tasks completed per month" id="jhz-eO-37i">
-                            <font key="font" size="14" name=".AppleSystemUIFont"/>
+                            <font key="font" size="13" name=".AppleSystemUIFont"/>
                             <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u5d-yd-4Q8">
-                        <rect key="frame" x="610" y="199" width="199" height="18"/>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u5d-yd-4Q8">
+                        <rect key="frame" x="44" y="155" width="322" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Tasks completed per weekday" id="WJQ-cm-c1N">
-                            <font key="font" size="14" name=".AppleSystemUIFont"/>
+                            <font key="font" size="13" name=".AppleSystemUIFont"/>
                             <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="lJf-6c-sl5">
-                        <rect key="frame" x="40" y="42" width="261" height="142"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="lJf-6c-sl5" secondAttribute="height" multiplier="260:141" id="INB-No-1YN"/>
-                        </constraints>
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lJf-6c-sl5">
+                        <rect key="frame" x="44" y="358" width="320" height="100"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     </customView>
-                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="fRO-jw-FX6">
-                        <rect key="frame" x="326" y="42" width="261" height="142"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="fRO-jw-FX6" secondAttribute="height" multiplier="260:141" id="UXW-LA-2l4"/>
-                        </constraints>
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fRO-jw-FX6">
+                        <rect key="frame" x="44" y="201" width="320" height="100"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     </customView>
-                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="QsT-gu-GPx">
-                        <rect key="frame" x="612" y="42" width="261" height="142"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="QsT-gu-GPx" secondAttribute="height" multiplier="260:141" id="Tfo-AT-g5c"/>
-                        </constraints>
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QsT-gu-GPx">
+                        <rect key="frame" x="44" y="44" width="320" height="100"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     </customView>
                 </subviews>
-                <constraints>
-                    <constraint firstItem="QsT-gu-GPx" firstAttribute="top" secondItem="u5d-yd-4Q8" secondAttribute="bottom" constant="15" id="4Rg-2X-xMn"/>
-                    <constraint firstItem="fRO-jw-FX6" firstAttribute="top" secondItem="lJf-6c-sl5" secondAttribute="top" id="4vq-cn-sGg"/>
-                    <constraint firstItem="lJf-6c-sl5" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="40" id="6nX-UX-Xkb"/>
-                    <constraint firstItem="lJf-6c-sl5" firstAttribute="top" secondItem="1Rz-tb-MgD" secondAttribute="bottom" constant="15" id="8K6-87-yx5"/>
-                    <constraint firstItem="Yny-Hk-iJv" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="45" id="BDg-FF-aTO"/>
-                    <constraint firstItem="QsT-gu-GPx" firstAttribute="top" secondItem="lJf-6c-sl5" secondAttribute="top" id="Ccj-Ww-JPo"/>
-                    <constraint firstItem="1Rz-tb-MgD" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="40" id="Nij-VP-ySl"/>
-                    <constraint firstItem="1Rz-tb-MgD" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Yny-Hk-iJv" secondAttribute="bottom" constant="60" id="P9R-EN-mPI"/>
-                    <constraint firstItem="fRO-jw-FX6" firstAttribute="top" secondItem="ELO-0f-zdq" secondAttribute="bottom" constant="15" id="Pdt-1r-PB7"/>
-                    <constraint firstItem="2rZ-AC-dJT" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="45" id="QcN-pm-ZnT"/>
-                    <constraint firstItem="fRO-jw-FX6" firstAttribute="leading" secondItem="ELO-0f-zdq" secondAttribute="leading" id="VEf-cL-5ah"/>
-                    <constraint firstAttribute="bottom" secondItem="lJf-6c-sl5" secondAttribute="bottom" constant="42" id="WLe-kQ-kmQ"/>
-                    <constraint firstItem="2rZ-AC-dJT" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="45" id="Wc6-AN-inQ"/>
-                    <constraint firstItem="QsT-gu-GPx" firstAttribute="leading" secondItem="fRO-jw-FX6" secondAttribute="trailing" constant="25" id="X3p-od-6Fi"/>
-                    <constraint firstAttribute="bottom" secondItem="QsT-gu-GPx" secondAttribute="bottom" constant="42" id="bab-1c-B0Z"/>
-                    <constraint firstItem="QsT-gu-GPx" firstAttribute="leading" secondItem="u5d-yd-4Q8" secondAttribute="leading" id="gHB-pi-wLi"/>
-                    <constraint firstAttribute="trailing" secondItem="QsT-gu-GPx" secondAttribute="trailing" constant="40" id="k2V-nW-2is"/>
-                    <constraint firstAttribute="bottom" secondItem="fRO-jw-FX6" secondAttribute="bottom" constant="42" id="nAU-hS-cHJ"/>
-                    <constraint firstItem="Yny-Hk-iJv" firstAttribute="top" secondItem="2rZ-AC-dJT" secondAttribute="bottom" constant="7" id="ndl-07-D9U"/>
-                    <constraint firstItem="fRO-jw-FX6" firstAttribute="leading" secondItem="lJf-6c-sl5" secondAttribute="trailing" constant="25" id="pC9-xX-TY8"/>
-                    <constraint firstItem="QsT-gu-GPx" firstAttribute="leading" secondItem="fRO-jw-FX6" secondAttribute="trailing" constant="25" id="zrF-CU-3qo"/>
-                </constraints>
             </view>
             <connections>
                 <outlet property="monthGraph" destination="fRO-jw-FX6" id="YiA-zC-4ji"/>
@@ -766,7 +741,7 @@
                 <outlet property="weekGraph" destination="lJf-6c-sl5" id="CGk-4K-9DV"/>
                 <outlet property="weekdayGraph" destination="QsT-gu-GPx" id="6vr-4R-FfC"/>
             </connections>
-            <point key="canvasLocation" x="643.5" y="381"/>
+            <point key="canvasLocation" x="143" y="574"/>
         </window>
     </objects>
 </document>
