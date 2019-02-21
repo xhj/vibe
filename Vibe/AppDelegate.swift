@@ -24,7 +24,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
         self.updateStats()
         
-        Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(AppDelegate.updateStats), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(withTimeInterval: 30, repeats: true) { [weak self] _ in
+            self?.updateStats()
+        }
     }
     
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
@@ -39,6 +41,5 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
     }
-
 }
 

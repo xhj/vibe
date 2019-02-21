@@ -8,20 +8,6 @@
 
 import Cocoa
 
-extension NSView {
-    var backgroundColor: NSColor? {
-        get {
-            guard let layer = layer, let backgroundColor = layer.backgroundColor else { return nil }
-            return NSColor(cgColor: backgroundColor)
-        }
-        
-        set {
-            wantsLayer = true
-            layer?.backgroundColor = newValue?.cgColor
-        }
-    }
-}
-
 class TSCBarChartView: NSView {
     
     fileprivate var barData : [String: Int]?
@@ -68,8 +54,9 @@ class TSCBarChartView: NSView {
             if value <= 0 {
                 continue
             }
-            while label.characters.contains("|") {
-                label = String(label.characters.dropFirst())
+            
+            while label.contains("|") {
+                label = String(label.dropFirst())
             }
             
             let calculatedHeight = barHeight * (CGFloat(value) / CGFloat(maxValue))
@@ -111,14 +98,14 @@ class TSCBarChartView: NSView {
             labelLabel.isEditable = false
             
             if #available(OSX 10.11, *) {
-                labelLabel.font = NSFont.systemFont(ofSize: 11, weight: NSFontWeightSemibold)
+                labelLabel.font = NSFont.systemFont(ofSize: 11, weight: NSFont.Weight.semibold)
             } else {
                 // Fallback on earlier versions
                 labelLabel.font = NSFont.systemFont(ofSize: 11);
             }
             
             let barView = NSView(frame: calculatedFrame)
-            barView.backgroundColor = self.barColor
+            barView.layer?.backgroundColor = self.barColor?.cgColor
             
             self.addSubview(barView)
             self.addSubview(valueLabel)
