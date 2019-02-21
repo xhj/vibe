@@ -19,7 +19,7 @@ class TSCStatsLoader {
         if let scriptObject = NSAppleScript(source: myAppleScript) {
             var error: NSDictionary?
             let output = scriptObject.executeAndReturnError(&error)
-            guard error != nil else { return nil }
+            guard error == nil else { return nil }
             guard let ret = output.stringValue else { return nil }
             
             let dates = ret.components(separatedBy: "\r");
