@@ -46,8 +46,8 @@ class TSCBarChartView: NSView {
         let barHeight = frame.height - barTop
         let barWidth = frame.width / CGFloat(barCount) - 4.0
         
-        let sortedKeys = Array(barData.keys).sorted(by: <)
-        Swift.print(sortedKeys)
+        let sortedKeys = barData.keys.sorted(by: <)
+        print(sortedKeys)
         
         for var label in sortedKeys {
             let value = barData[label]!
@@ -96,16 +96,10 @@ class TSCBarChartView: NSView {
             labelLabel.alignment = .center
             labelLabel.usesSingleLineMode = true
             labelLabel.isEditable = false
+            labelLabel.font = NSFont.systemFont(ofSize: 11, weight: NSFont.Weight.semibold)
             
-            if #available(OSX 10.11, *) {
-                labelLabel.font = NSFont.systemFont(ofSize: 11, weight: NSFont.Weight.semibold)
-            } else {
-                // Fallback on earlier versions
-                labelLabel.font = NSFont.systemFont(ofSize: 11);
-            }
-            
-            let barView = NSView(frame: calculatedFrame)
-            barView.layer?.backgroundColor = self.barColor?.cgColor
+            let barView = BarView(frame: calculatedFrame)
+            barView.backgroundColor = self.barColor
             
             self.addSubview(barView)
             self.addSubview(valueLabel)
@@ -118,5 +112,18 @@ class TSCBarChartView: NSView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+}
+
+fileprivate class BarView: NSView {
+    var backgroundColor: NSColor? {
+        get {
+            guard let layer = layer, let backgroundColor = layer.backgroundColor else { return nil }
+            return NSColor(cgColor: backgroundColor)
+        }
+        
+        set {
+            wantsLayer = true
+            layer?.backgroundColor = newValue?.cgColor
+        }
+    }
 }
