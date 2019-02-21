@@ -25,8 +25,7 @@ class TSCVibeWindow: NSWindow {
         self.renderWeekdayGraph(stats)
         
         guard let stats = stats else {
-            titleLabel.stringValue = "Update Failed."
-            subtitleLabel.stringValue = "Execute AppleScript Failed."
+            titleLabel.stringValue = "Loading Failed."
             return
         }
         

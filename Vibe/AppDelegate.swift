@@ -17,7 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.window.titlebarAppearsTransparent = true
         self.window.isMovableByWindowBackground = true
         self.window.styleMask.insert(.fullSizeContentView)
-        self.window.backgroundColor = NSColor(red:0.15, green:0.16, blue:0.18, alpha:1.00)
+        self.window.backgroundColor = NSColor(named: NSColor.Name("backgroundColor"))
         
         self.window.makeKey()
         self.window.makeMain()
