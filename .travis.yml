@@ -3,3 +3,6 @@ osx_image: xcode10.1
 xcode_project: Vibe.xcodeproj
 xcode_scheme: Vibe
 xcode_destination: platform=macOS
+
+notifications:
+  slack: $SLACK_CHANNEL
