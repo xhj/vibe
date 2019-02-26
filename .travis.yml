@@ -1,8 +1,22 @@
 language: swift
 osx_image: xcode10.1
-xcode_project: Vibe.xcodeproj
-xcode_scheme: Vibe
 xcode_destination: platform=macOS
+
+env:
+ global:
+ - LANG=en_US.UTF-8
+ - LC_ALL=en_US.UTF-8
+ - XCODE_PROJECT=Vibe.xcodeproj
+ matrix:
+ - SCHEME="Vibe"
+
+before_install:
+ - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
+
+script:
+ - set -o pipefail
+ - xcodebuild -project "$XCODE_PROJECT" -scheme "$SCHEME" -detination platform=macOS -configuration Debug clean build | xcpretty -c
+ - xcodebuild -project "$XCODE_PROJECT" -scheme "$SCHEME" -detination platform=macOS -configuration Release clean build | xcpretty -c
 
 notifications:
   slack: $SLACK_CHANNEL
