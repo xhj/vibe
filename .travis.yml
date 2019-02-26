@@ -15,8 +15,8 @@ before_install:
 
 script:
  - set -o pipefail
- - xcodebuild -project "$XCODE_PROJECT" -scheme "$SCHEME" -detination platform=macOS -configuration Debug clean build | xcpretty -c
- - xcodebuild -project "$XCODE_PROJECT" -scheme "$SCHEME" -detination platform=macOS -configuration Release clean build | xcpretty -c
+ - xcodebuild -project "$XCODE_PROJECT" -scheme "$SCHEME" -configuration Debug clean build | xcpretty -c
+ - xcodebuild -project "$XCODE_PROJECT" -scheme "$SCHEME" -configuration Release clean build | xcpretty -c
 
 notifications:
   slack: $SLACK_CHANNEL
