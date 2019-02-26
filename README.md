@@ -1,5 +1,7 @@
 # Vibe
 
+[![Build Status](https://travis-ci.com/hechen/vibe.svg?branch=master)](https://travis-ci.com/hechen/vibe)
+
 Based on [tschoffelen/vibe](https://github.com/tschoffelen/vibe)
 
 A tiny tool that allows you to see how you're doing with your [OmniFocus](https://www.omnigroup.com/omnifocus/) tasks.
