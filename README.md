@@ -6,7 +6,7 @@ Based on [tschoffelen/vibe](https://github.com/tschoffelen/vibe)
 
 A tiny tool that allows you to see how you're doing with your [OmniFocus](https://www.omnigroup.com/omnifocus/) tasks.
 
-**[Download the latest version here](https://github.com/hechen/vibe/releases)**
+**[Download the latest version here](https://github.com/xhj/vibe/releases/)**
 
 ![Screenshot](screenshot.png)
 
