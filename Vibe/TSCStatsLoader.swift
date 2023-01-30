@@ -14,7 +14,7 @@ class TSCStatsLoader {
         
         /// this AppleScript check OmniFocus all the completed TODOs
         /// output is the completion dates
-        let myAppleScript = "set ignored to \"喝杯水 做俯卧撑 明日计划\"\nset theProgressDetail to \"\"\ntell application \"OmniFocus\"\ntell front document\nset theModifiedProjects to every flattened project\nrepeat with a from 1 to length of theModifiedProjects\nset theCompletedTasks to (every flattened task of (item a of theModifiedProjects) where its number of tasks = 0)\nif theCompletedTasks is not equal to {} then\nrepeat with b from 1 to length of theCompletedTasks\nif ignored does not contains name of (item b of theCompletedTasks)\nset theProgressDetail to theProgressDetail & completion date of (item b of theCompletedTasks) & return\nend if\nend repeat\nend if\nend repeat\nset theInboxCompletedTasks to (every inbox task where its number of tasks = 0)\nrepeat with d from 1 to length of theInboxCompletedTasks\nset theProgressDetail to theProgressDetail & completion date of (item d of theInboxCompletedTasks) & return\nend repeat\nend tell\nend tell\nreturn theProgressDetail"
+        let myAppleScript = "set ignored to \"喝杯水 做俯卧撑 明日计划 周计划 月计划 季度计划 年度计划\"\nset theProgressDetail to \"\"\ntell application \"OmniFocus\"\ntell front document\nset theModifiedProjects to every flattened project\nrepeat with a from 1 to length of theModifiedProjects\nset theCompletedTasks to (every flattened task of (item a of theModifiedProjects) where its number of tasks = 0)\nif theCompletedTasks is not equal to {} then\nrepeat with b from 1 to length of theCompletedTasks\nif ignored does not contains name of (item b of theCompletedTasks)\nset theProgressDetail to theProgressDetail & completion date of (item b of theCompletedTasks) & return\nend if\nend repeat\nend if\nend repeat\nset theInboxCompletedTasks to (every inbox task where its number of tasks = 0)\nrepeat with d from 1 to length of theInboxCompletedTasks\nset theProgressDetail to theProgressDetail & completion date of (item d of theInboxCompletedTasks) & return\nend repeat\nend tell\nend tell\nreturn theProgressDetail"
         
         if let scriptObject = NSAppleScript(source: myAppleScript) {
             var error: NSDictionary?
@@ -39,7 +39,7 @@ class TSCStatsLoader {
             let dateFormatter2 = DateFormatter()
             dateFormatter2.dateFormat = "MMM"
             
-            let weekdayNames = ["", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+            let weekdayNames = ["", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
             
             let calendar = Calendar.current
         
